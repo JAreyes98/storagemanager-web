@@ -11,7 +11,7 @@ export default defineConfig({
     port: 5174,
     proxy: {
       '/api': {
-          target: env.VITE_API_GATEWAY,
+          target: import.meta.env.VITE_API_GATEWAY,
         changeOrigin: true,
         secure: false,
       }
