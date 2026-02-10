@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useSearchParams } from 'react-r
 import MainLayout from './layout/MainLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Buckets from './pages/buckets/Buckets';
-import BucketFileExplorer from './pages/buckets/FileExplorer';
+import BucketFileExplorer from './pages/buckets/BucketFileExplorer';
 import AppManagement from './pages/apps/AppManagement';
 import ReplicationManager from './pages/rules/ReplicationRules';
 
