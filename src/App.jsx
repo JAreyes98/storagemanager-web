@@ -5,6 +5,9 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Buckets from './pages/buckets/Buckets';
 import BucketFileExplorer from './pages/buckets/FileExplorer';
 import AppManagement from './pages/apps/AppManagement';
+import ReplicationManager from './pages/rules/ReplicationRules';
+
+const BASE_URL = import.meta.env.VITE_AUTH_LOGIN;
 
 const AuthProvider = ({ children }) => {
   const [searchParams] = useSearchParams();
@@ -26,7 +29,7 @@ const AuthProvider = ({ children }) => {
     if (!savedToken) {
       // 4. If no token, redirect to login
       const currentUrl = window.location.origin + window.location.pathname;
-      window.location.href = `http://localhost:5173/login?redirect=${encodeURIComponent(currentUrl)}`;
+      window.location.href = `${BASE_URL}?redirect=${encodeURIComponent(currentUrl)}`;
     }
   }, [searchParams]);
 
@@ -45,6 +48,7 @@ function App() {
             <Route path="/buckets" element={<Buckets />} />
             <Route path="/buckets/:bucketId/files" element={<BucketFileExplorer />} />
             <Route path="/apps" element={<AppManagement />} />
+            <Route path="/replication" element={<ReplicationManager />} />
           </Routes>
         </MainLayout>
       </AuthProvider>

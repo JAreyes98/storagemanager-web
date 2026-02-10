@@ -9,6 +9,7 @@ export const storageApi = {
     
     // Buckets
     getAllBuckets: (appId) => apiClient.get(`/admin/buckets`),
+    getBucketsByApp: (appId) => apiClient.get(`/admin/buckets/app/${appId}`),
     getBucketById: (bucketId) => apiClient.get(`/admin/buckets/${bucketId}`),
     getBuckets: (appId) => apiClient.get(`/admin/buckets/app/${appId}`),
     registerBucket: (data) => apiClient.post(`/admin/buckets`, data),

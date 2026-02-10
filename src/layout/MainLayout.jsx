@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutDashboard, Database, ShieldAlert, Settings, FolderTree } from 'lucide-react';
+import { LayoutDashboard, Database, ShieldAlert, BookCopy, Settings, FolderTree } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const SidebarItem = ({ icon: Icon, label, path, active }) => (
@@ -29,6 +29,7 @@ const MainLayout = ({ children }) => {
           <SidebarItem icon={LayoutDashboard} label="Dashboard" path="/" active={location.pathname === '/'} />
           <SidebarItem icon={Database} label="Buckets" path="/buckets" active={location.pathname === '/buckets'} />
           <SidebarItem icon={Settings} label="Apps Management" path="/apps" active={location.pathname === '/apps'} />
+          <SidebarItem icon={BookCopy} label="Replication" path="/replication" active={location.pathname === '/replication'} />
           <SidebarItem icon={ShieldAlert} label="Security" path="/security" active={location.pathname === '/security'} />
         </nav>
       </aside>
